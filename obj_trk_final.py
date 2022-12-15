@@ -63,9 +63,16 @@ while True:
    if success:
     drawBox(img,bbox)
    else:
-    cv2.putText(img,"Errou",(75,90),cv2.FONT_HERSHEY_SIMPLEX,0.7,(0,0,255),2)
+    cv2.putText(img,"Erro",(75,90),cv2.FONT_HERSHEY_SIMPLEX,0.7,(0,0,255),2)
 
     goal_track(img,bbox)
-   pass
+
+    cv2.imshow("",img)
+
+    key = cv2.waitKey(1)
+    if key == ord('q'):
+        print("Fechando")
+        break
+
 video.release()
 cv2.destroyALLwindows() 
